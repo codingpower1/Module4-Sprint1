@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./my-portfolio
+    ports:
+      - "3000:80"
+    networks:
+      - prf-network
+  backend:
+    build: ./my-banking
+    ports:
+      - "5090:5090"
+    networks:
+      - prf-network
+networks:
+  prf-network:
+    driver: bridge
